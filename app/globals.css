@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 158 64% 37%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 186 100% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 199 89% 48%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all;
+  @apply text-slate-600 hover:bg-sky-50 hover:text-sky-700;
+}
+
+.sidebar-item.active {
+  @apply bg-sky-100 text-sky-700;
+}
+
+.stat-card {
+  @apply bg-white rounded-xl border p-5 shadow-sm hover:shadow-md transition-shadow;
+}
+
+.medical-badge-low { @apply bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full font-medium; }
+.medical-badge-medium { @apply bg-yellow-100 text-yellow-700 text-xs px-2 py-0.5 rounded-full font-medium; }
+.medical-badge-high { @apply bg-orange-100 text-orange-700 text-xs px-2 py-0.5 rounded-full font-medium; }
+.medical-badge-critical { @apply bg-red-100 text-red-700 text-xs px-2 py-0.5 rounded-full font-medium; }
